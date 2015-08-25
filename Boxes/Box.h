@@ -17,13 +17,13 @@
 @property (nonatomic, strong) NSString* name;
 
 
--(instancetype)initWithName:(NSString*)name Height:(float)height Depth:(float)depth Width:(float)width;
+-(instancetype)initWithName:(NSString*)name andHeight:(float)height andDepth:(float)depth andWidth:(float)width;
 
-+(instancetype)boxWithName:(NSString*)name Height:(float)height Depth:(float)depth Width:(float)width;
++(instancetype)boxWithName:(NSString*)name andHeight:(float)height andDepth:(float)depth andWidth:(float)width;
 
 -(float)volume;
 
--(void)setDimensionsWithHeight:(float)height Depth:(float)depth Width:(float)width;
+-(void)setDimensionsWithHeight:(float)height andDepth:(float)depth andWidth:(float)width;
 
 -(BOOL)canFitInBox:(Box*)otherBox;
 

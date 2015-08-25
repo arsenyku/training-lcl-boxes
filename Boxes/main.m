@@ -12,14 +12,14 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        Box *smallBox = [Box boxWithName:@"Box of Matches" Height:1 Depth:1 Width:1];
-        Box *mediumBox = [Box boxWithName:@"Lamp Box" Height:3 Depth:1 Width:1];
+        Box *smallBox = [Box boxWithName:@"Box of Matches" andHeight:1 andDepth:1 andWidth:1];
+        Box *mediumBox = [Box boxWithName:@"Lamp Box" andHeight:3 andDepth:1 andWidth:1];
         
         float volume = [smallBox volume];
         
         NSLog(@"The volume of the box is %f", volume);
         
-        Box* largeBox = [Box boxWithName:@"Moving Box #1" Height:5 Depth:5 Width:5];
+        Box* largeBox = [Box boxWithName:@"Moving Box #1" andHeight:5 andDepth:5 andWidth:5];
         
         NSLog(@"%@ will fit into %@ %d times.", smallBox.name, largeBox.name,
               [smallBox countThatWillFitInBox:largeBox]);

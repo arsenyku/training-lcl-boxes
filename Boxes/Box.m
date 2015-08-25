@@ -21,20 +21,23 @@
     return self;
 }
 
--(instancetype)initWithName:(NSString*)name Height:(float)height Depth:(float)depth Width:(float)width{
+
+-(instancetype)initWithName:(NSString*)name andHeight:(float)height andDepth:(float)depth andWidth:(float)width{
     self = [super init];
     _name = name;
-    [self setDimensionsWithHeight:height Depth:depth Width:width];
+    _height = height;
+    _depth = depth;
+    _width = width;
     
     return self;
 }
 
-+(instancetype)boxWithName:(NSString*)name Height:(float)height Depth:(float)depth Width:(float)width{
-    Box* newBox = [[Box alloc] initWithName:name Height:height Depth:depth Width:width];
++(instancetype)boxWithName:(NSString*)name andHeight:(float)height andDepth:(float)depth andWidth:(float)width{
+    Box* newBox = [[Box alloc] initWithName:name andHeight:height andDepth:depth andWidth:width];
     return newBox;
 }
 
--(void)setDimensionsWithHeight:(float)height Depth:(float)depth Width:(float)width{
+-(void)setDimensionsWithHeight:(float)height andDepth:(float)depth andWidth:(float)width{
     self.height = height;
     self.depth = depth;
     self.width = width;
