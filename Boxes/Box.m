@@ -11,6 +11,7 @@
 @implementation Box
 
 -(instancetype)init{
+    self = [super init];
     _height = 0;
     _depth = 0;
     _width = 0;
