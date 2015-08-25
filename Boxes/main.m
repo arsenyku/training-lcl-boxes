@@ -7,11 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Box.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+
+        Box* smallBox = [Box boxWithName:@"Box of Matches" Height:1 Depth:1 Width:1];
+        
+        float volume = [smallBox volume];
+        
+        NSLog(@"The volume of the box is %f", volume);
+        
+        Box* largeBox = [Box boxWithName:@"Moving Box #1" Height:5 Depth:5 Width:5];
+        
+        NSLog(@"%@ will fit into %@ %d times.", smallBox.name, largeBox.name,
+	              [smallBox countThatWillFitInBox:largeBox]);
+        
+        NSLog(@"%@ will fit into %@ %d times.", largeBox.name, smallBox.name,
+              [largeBox countThatWillFitInBox:smallBox]);
+
+        NSLog(@"%@ will fit into %@ %d times.", smallBox.name, smallBox.name,
+              [smallBox countThatWillFitInBox:smallBox]);
+
     }
     return 0;
 }
