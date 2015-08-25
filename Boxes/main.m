@@ -12,7 +12,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        Box* smallBox = [Box boxWithName:@"Box of Matches" Height:1 Depth:1 Width:1];
+        Box *smallBox = [Box boxWithName:@"Box of Matches" Height:1 Depth:1 Width:1];
+        Box *mediumBox = [Box boxWithName:@"Lamp Box" Height:3 Depth:1 Width:1];
         
         float volume = [smallBox volume];
         
@@ -21,8 +22,11 @@ int main(int argc, const char * argv[]) {
         Box* largeBox = [Box boxWithName:@"Moving Box #1" Height:5 Depth:5 Width:5];
         
         NSLog(@"%@ will fit into %@ %d times.", smallBox.name, largeBox.name,
-	              [smallBox countThatWillFitInBox:largeBox]);
+              [smallBox countThatWillFitInBox:largeBox]);
         
+        NSLog(@"%@ will fit into %@ %d times.", mediumBox.name, largeBox.name,
+              [mediumBox countThatWillFitInBox:largeBox]);
+
         NSLog(@"%@ will fit into %@ %d times.", largeBox.name, smallBox.name,
               [largeBox countThatWillFitInBox:smallBox]);
 
